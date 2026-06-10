@@ -1,4 +1,44 @@
 {
   "name": "plugins",
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "workspaces": [
+    "src/common/*/",
+    "src/runner/*/",
+    "src/web/*/"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsx lib/build.ts",
+    "dev": "tsx lib/build.ts --watch",
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "lint": "eslint --concurrency=auto src",
+    "format": "prettier --write \"**/*.{ts,tsx,json,js,mjs}\"",
+    "format:ci": "prettier --list-different \"**/*.{ts,tsx,json,js,mjs}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@sourceacademy/conductor": "^0.3.0",
+    "@sourceacademy/plugin-directory": "source-academy/plugin-directory#main",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.1",
+    "commander": "^14.0.3",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.1",
+    "ts-jest": "^29.4.11",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.57.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/source-academy/plugins.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/source-academy/plugins/issues"
+  },
+  "homepage": "https://github.com/source-academy/plugins#readme"
 }

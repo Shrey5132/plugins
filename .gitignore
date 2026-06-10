@@ -15,3 +15,9 @@ node_modules
 
 #!.yarn/cache
 .pnp.*
+
+# Output of the build process
+dist
+
+# Output of the test coverage process
+coverage
