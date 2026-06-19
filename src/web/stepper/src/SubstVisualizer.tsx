@@ -262,7 +262,8 @@ function FunctionDefinitionPopoverContent({
 /**
  * renderNode renders a serialized Stepper AST node to a React ReactNode.
  */
-function renderNode(currentNode: StepperNode, renderContext: RenderContext): React.ReactNode {
+function renderNode(currentNode: StepperNode | null | undefined, renderContext: RenderContext): React.ReactNode {
+  if (currentNode == null) return null;
   const styleWrapper = renderContext.styleWrapper;
   const popoverDepth = renderContext.popoverDepth ?? 0;
   const renderers = {
@@ -572,11 +573,12 @@ function renderNode(currentNode: StepperNode, renderContext: RenderContext): Rea
 
   // Additional renderers
   const renderFunctionArguments = (
-    nodes: StepperNode[],
+    nodes: StepperNode[] | undefined,
     renderNodeFn: typeof renderNode,
     styleWrapper: StyleWrapper | undefined,
     popoverDepth: number,
   ) => {
+    if (!nodes) return "()";
     const args: React.ReactNode[] = nodes.map(arg =>
       renderNodeFn(arg, {
         styleWrapper: styleWrapper ?? (_node => p => p),
@@ -605,7 +607,8 @@ function renderNode(currentNode: StepperNode, renderContext: RenderContext): Rea
     return renderedArguments;
   };
 
-  const renderArguments = (nodes: StepperNode[]) => {
+  const renderArguments = (nodes: StepperNode[] | undefined) => {
+    if (!nodes) return "()";
     const args: React.ReactNode[] = nodes.map(arg =>
       renderNode(arg, { styleWrapper: styleWrapper, popoverDepth: popoverDepth }),
     );
