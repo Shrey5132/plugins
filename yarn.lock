@@ -1366,7 +1366,7 @@ __metadata:
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.9"
   peerDependencies:
-    "@sourceacademy/common-cse-machine": ">=0.0.1"
+    "@sourceacademy/common-cse-machine": ">=0.1.0"
     "@sourceacademy/conductor": ">=0.3.0"
   languageName: unknown
   linkType: soft
@@ -1404,7 +1404,7 @@ __metadata:
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.9"
   peerDependencies:
-    "@sourceacademy/common-cse-machine": ">=0.0.1"
+    "@sourceacademy/common-cse-machine": ">=0.1.0"
     "@sourceacademy/conductor": ">=0.3.0"
   languageName: unknown
   linkType: soft
