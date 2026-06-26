@@ -1,3 +1,5 @@
+import { expect, test } from "vitest";
+
 import { RUNNER_ID, STEPPER_CHANNEL_ID } from "@sourceacademy/common-stepper";
 import { BaseStepperRunnerPlugin } from "..";
 

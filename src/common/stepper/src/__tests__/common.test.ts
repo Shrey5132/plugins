@@ -1,3 +1,5 @@
+import { expect, test } from "vitest";
+
 import { RUNNER_ID, STEPPER_CHANNEL_ID, WEB_ID } from "..";
 
 test("runner and web ids are distinct", () => {
